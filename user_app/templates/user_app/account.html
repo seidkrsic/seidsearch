@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="flex-row justify-start">
+<div class="flex-row justify-start max-width">
     <div class="flex-col justify-start">
         <img id="demo" class="circle border profile-pic-main" src="{{user1.imageURL}}">
         <div id = 'profile-name' class="max-width centered flex-row">
@@ -10,7 +10,7 @@
             <a id="show-all-btn" class="small-btn" href="{% url 'editAccount' %}">Edit</a>
         </div>
     </div>
-    <div class="justify-start">
+    <div class="justify-start max-width">
         <div class="flex-row justify-start light-blue">
             <h3 class="white">Skills</h3>
             <a href='{% url "create-skill" %}' id="show-all-btn" class="small-btn"> +Add skill</a>
