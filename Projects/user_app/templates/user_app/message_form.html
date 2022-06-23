@@ -1,0 +1,28 @@
+
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<div class="flex-col centered">
+    <h1>Send message to {{recepient.name}}</h1>
+    <form action="{% url 'create-message' recepient.id %}" method="POST" class="flex-col">
+    {% csrf_token %}
+        
+        {% if request.user.is_authenticated %}
+            {{form.subject.label}}
+            {{form.subject}}
+
+            {{form.body.label}}
+            {{form.body}}
+
+        {% else %}
+            {{form}}
+        {% endif %}
+        
+    <input class="small-btn" id="show-all-btn" type="submit" value="Send">
+    </form>
+
+</div>
+
+{% endblock %}

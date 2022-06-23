@@ -1,0 +1,25 @@
+
+
+{% extends 'layout.html' %}
+
+{% block content %}
+    {% if page %}
+        <p>Are you sure you want to delete "{{project.name}}"?</p>
+        <form method="POST" action="{% url 'delete-skill' project.id %}">
+            {% csrf_token %}
+            <input class="small-btn" type="submit" value = 'Yes'>
+            <button class="small-btn" formaction="{% url 'account' %}">Go Back</button>
+
+        </form> 
+    {% else %}
+        <p>Are you sure you want to delete "{{project.title}}"?</p>
+        <form method="POST" action="{% url 'delete' project.id %}">
+            {% csrf_token %}
+            <input class="small-btn" type="submit" value = 'Yes'>
+            <button class="small-btn" formaction="{% url 'index' %}">Go Back</button>
+
+        </form> 
+    {% endif %}
+        
+
+{% endblock %}

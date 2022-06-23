@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+
+<form class="flex-col" method="POST" action="">
+    {% if page == 'create' %}
+        <h1>Create Skill</h1>
+    {% else %}
+        <h1>Update Skill</h1>
+    {% endif %}
+
+    {% csrf_token %}
+    {% for field in form %}
+    
+    <p>{{field.label}}</p>
+    <p>{{field}}</p>
+    
+    {% endfor%}
+    <div class="flex-col centered">
+        <div class="flex-row">
+            <input class="small-btn" type="submit" value="Submit">
+            <a id='show-all-btn' class="small-btn" href="{% url 'account' %}">Back</a>
+        </div>
+    </div>
+
+</form>
+
+
+
+{% endblock %}

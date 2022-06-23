@@ -1,0 +1,38 @@
+
+
+{% extends 'layout.html' %} 
+
+{% block content %}
+<div class="flex-col centered">
+
+    {% if page == 'register' %}
+    <h1 class="flex-row centered">Register</h1>
+    
+    <form class="flex-col" action = "{% url 'register' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form %}
+        <label> {{field.label}}</label>
+        {{field}}
+        {% endfor %}
+        <input id='show-all-btn' class="small-btn" type="submit" value="Register User">
+    </form>
+
+    <p class="flex-row">Already have an accont? <span><a id="show-all-btn" class="small-btn" href="{% url 'login' %}">Login</a></span></p>
+    {% else %}
+
+    <h1 class="flex-row centered">Login to your account</h1>
+    <form class="flex-col centered" action ="" method="POST">
+        {% csrf_token %}
+        <input class="input" type="text" name="username" placeholder="Enter your username"/>
+        <input class="input" type="password" name="password" placeholder="Enter your password"/>
+        <input  class='btn' type="submit" value='Login'/>
+        <div class="flex-row centered">
+            <p class="flex-row">Don't have an accont? <span><a class="small-btn" id ='show-all-btn' href="{% url 'register' %}">Sign up</a></span></p>
+        </div>
+        <a href="{% url 'reset_password' %}">Forgot password?</a>
+    </form>
+    {% endif %}
+    
+
+</div>
+{% endblock %}

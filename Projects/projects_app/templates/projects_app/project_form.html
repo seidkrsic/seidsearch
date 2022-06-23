@@ -1,0 +1,29 @@
+
+{% extends 'layout.html' %}
+
+{% block content %} 
+    <div class="flex-col centered">
+    <h1>Project Form</h1>
+
+    <form class="flex-col justify-start black" action="" method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            {% if field.name == 'featured_image' %}
+                <p class="fileinput">{{field.label}}</p>
+                <p class="fileinput">{{field}}</p>
+            {% else %}
+                <p class="">{{field.label}}</p>
+                <p class="">{{field}}</p>
+            {% endif %}
+        {% endfor %}
+        <p><textarea name='newTags' placeholder="Add tags here..."></textarea></p>
+        <p class="flex-col centered max-width no-padding"><input id="show-all-btn" class="small-btn" type="submit"></p>
+        <div class="flex-row">
+            {% for tag in project.tags.all %}
+                <p>{{tag}}</p>
+            {% endfor %}
+        </div>
+    </form>
+</div>
+
+{% endblock %}

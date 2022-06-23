@@ -1,0 +1,31 @@
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<div class="flex-col max-width centered">
+    <h1 class="flex-col max-width centered">Edit account</h1>
+    <form class="flex-col max-width centered" action="{% url 'editAccount' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="flex-col justify-start">
+            <div class="flex-col centered">
+            {% for field in form %}
+                {% if field.name == 'profile_image' %}
+                    <div class="flex-col justify-start">
+                        <p class="fileinput">{{field.label}}</p>
+                        <p class="fileinput">{{field}}</p>
+                    </div>
+                {% else %}
+                <div class="flex-col justify-start">
+                    <p>{{field.label}}</p>
+                    <p>{{field}}</p>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        <input class="small-btn" type="submit" value="Submit">
+    </form>
+</div>
+{% endblock content %}

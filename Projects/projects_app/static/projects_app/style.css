@@ -1,0 +1,471 @@
+
+* { 
+    margin-top: 0;
+    margin: 5px;
+    border: 1px solid black;
+    color: #011f4b;
+    box-sizing: border-box !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h2,h4 { 
+    color: #011f4b;
+}
+
+h5,h6 { 
+    color: #03396c;
+}
+p, div label { 
+    color: #6497b1;
+}
+
+.light-blue { 
+    background-color: #005b96 !important;
+    border-radius: 4px;
+}
+.border {
+    border: 1px solid #005b96;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+.flex-col { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.flex-row { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.justify-l { 
+    justify-content: start !important;
+}
+
+.nav-ul { 
+    list-style: none;
+    padding-right: 10px;
+
+}
+
+.nav-img { 
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    background-color: transparent;
+}
+
+
+.project-img { 
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.no-margin { 
+    margin-top: 0 !important;
+}
+.input { 
+    background-color: whitesmoke;
+    background-color: rgba(252, 254, 255, 0.959);
+    outline: none;
+    border-radius: 4px;
+    outline: none;
+    border: solid rgba(3,57,108,0.25);
+    padding: 5px;
+    color: rgba(3,57,108,0.75);
+    width: 400px;
+}
+
+
+input[type='password'], input[type='text'], input[type='email'] {
+    padding:5px !important;
+    width: 400px !important;
+    border-radius: 4px !important;
+    outline: none !important;
+    cursor: text !important;
+}
+
+input[type='submit'] { 
+    padding:5px;
+    width: 400px;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+#show-all-btn { 
+    padding:5px !important;
+    border-radius: 4px !important;
+    outline: none !important;
+    cursor: pointer !important;
+    width: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileinput a { 
+    font-size: 12px !important;
+}
+
+
+textarea {
+    border: solid rgba(3,57,108,0.25);
+    background-color: rgba(252, 254, 255, 0.959);
+    color: rgba(3,57,108,0.75);
+    border-radius: 4px;
+    resize: none;
+    outline: none;
+    width: 400px;
+    margin-left: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    transform: translateY(0px);
+    
+}
+
+textarea::placeholder {
+    padding: 5px;
+    color: rgba(3,57,108,0.75);
+    box-sizing: border-box;
+    margin-left: 0;
+    text-align: start;
+    transform: translateY(2px);
+}
+
+.black { 
+    color:black !important;
+}
+
+.nav-link { 
+    text-decoration: none;
+    color: #03396c;
+    font-weight: bold;
+}
+
+.all-links { 
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.space-beetwen { 
+    justify-content: space-between !important;
+    padding: 0 20px !important;
+}
+
+.no-padding { 
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: flex;
+    cursor: pointer;
+    width: 300px !important;
+}
+
+input[type='file'] { 
+    display: flex;
+    cursor: pointer;
+    width: 400px !important;
+   
+}
+
+input { 
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.profile-pic { 
+    display: flex;
+    border: 1px solid gray;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.profile-pic-main {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+
+}
+
+.profile-card { 
+    border: 1px solid gray;
+    margin-bottom: 5px;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrap { 
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.centered { 
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.max-width { 
+    width: 100%;
+}
+
+.fixed-height { 
+    display: flex;
+    height: 70px;
+}
+
+.justify-left { 
+    justify-content: start !important;
+    width: 100%;
+}
+
+.text-style { 
+    flex: row;
+    text-align: justify;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: medium;
+}
+
+.justify-start { 
+    justify-content: start !important;
+    align-items: flex-start !important;
+}
+
+.justify-end { 
+    justify-content: end !important;
+    align-items: flex-end !important;
+}
+
+.max-height { 
+    height: 100vh;
+}
+
+.profile-card-bigger { 
+    border: 1px solid gray;
+    margin-bottom: 5px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #b3cde0; */
+}
+
+a { 
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.red { 
+    color: darkred;
+}
+
+.message-style { 
+    list-style: none;
+    background-color: lightgoldenrodyellow;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.error { 
+    color: red;
+}
+
+.info { 
+    color: lightseagreen;
+}
+
+#profile-name { 
+    padding: 0 px !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;   
+}
+
+#margin-lr { 
+    margin: 10px 10px !important;
+    color: #03396c;
+}
+
+.btn { 
+    color: #005b96;
+    border-radius: 5px;
+    border: 1px solid #03396c; 
+    background-color: #b3cde0;
+    cursor: pointer;
+    padding: 3px 5px;
+}
+.small-btn, #small-btn { 
+    color: #005b96;
+    border-radius: 5px;
+    border: 1px solid #03396c; 
+    background-color: #b3cde0;
+    cursor: pointer;
+    padding: 5px;
+    font-size: small;
+    width: 100px !important;
+    
+
+}
+
+.bg-dark-blue { 
+    background-color: #03396c;
+}
+
+.white { 
+    color: whitesmoke;
+}
+
+.bg-light-blue { 
+    background-color: #b3cde0 !important;
+}
+
+.tag { 
+    background-color: #b3cde0 !important;
+    font-size: small !important;
+    color: #03396c !important;
+    border-radius: 4px;
+    padding: 2px;
+
+}
+
+.padding-left { 
+    padding-left: 2px;
+}
+
+.padding-small{ 
+    padding: 10px !important;
+}
+.margin-right { 
+    padding-right: 50px;
+}
+.circle { 
+    border-radius: 100px;
+}
+
+.no-margin { 
+    margin: 0;
+}
+
+#demo {
+    -webkit-box-shadow: 5px 5px 6px -1px #011f4b; 
+    box-shadow: 5px 5px 6px -1px #011f4b;
+    border: 2px solid #011f4b;
+    border-radius: 12px;
+}
+
+#demotext {
+    text-shadow: 3px 1px 3px rgba(3,57,108,0.25);
+    }
+
+.no-decoration { 
+    /* text-decoration: none !important; */
+    list-style: none !important;
+
+}
+
+.red { 
+    color: red !important;
+}
+
+.message-box-big { 
+    display: flex !important;
+    flex-direction: column !important;
+    border: 2px solid rgba(3,57,108,0.25);
+    height: auto;
+    width: 100%;
+    justify-content: start;
+    padding:10px;
+    margin-left: 0;
+    /* background-color: azure; */
+    margin:2px 2px 2px 0px;
+
+}
+
+.message-box { 
+    display: flex;
+    flex-direction: row;
+    border-radius: 20px;
+    border: 2px solid rgba(3,57,108,0.25);
+    height: auto;
+    width: 300px;
+    margin-left: 0;
+    padding: 5px 10px;
+    justify-content: center;
+    text-align: justify;
+}
+
+
+.big-
+
+.text-r { 
+    justify-content: end;
+}
+
+.text-l { 
+    justify-content: start;
+}
+
+.date-text-small { 
+    font-size: 10px !important;
+}
+.bold {  
+    font-weight: bolder;
+}
+
+.bg-picture { 
+    /* object-fit: cover; */
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    margin-left: 0;
+    padding-left: 0;
+    position: fixed;
+    z-index: -10;
+}
+
+body { 
+    display: flex;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.flex-col-body { 
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    box-sizing: border-box;
+    height: 100vh;
+    justify-content: start;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}

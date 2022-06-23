@@ -1,0 +1,79 @@
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+<div class="flex-col centered">
+    <h1 class="flex-col centered">Projects</h1>
+    
+    <form id = 'searchFormProject' class="flex-row centered" action="{% url 'index' %}" method="GET">
+        <!-- {% csrf_token %} -->
+        {{form.title}} 
+        <input class='small-btn' type="submit" value = 'Search'>   
+        <a id="show-all-btn" class='small-btn' href="{% url 'index' %}">Show all</a>
+    
+
+    </form>
+
+    <div class='flex-row centered wrap'>
+        {% for project in projects %}
+            <a class="all-links" href="{% url 'project' project.pk %}">
+                <div id="demo" class="flex-col centered profile-card-bigger">
+                    <img class="profile-pic" src="{{project.imageURL}}">
+                    <h4>{{project.title|truncatewords:'2'}}</h4>
+                    <h5>Owner: {{project.owner.name}}</h5>
+                    <h6>{{project.vote_ratio}}% Positive Feedback ({{project.vote_total}}  Vote{{project.vote_total|pluralize:'s'}})</h6>
+                    <div class="flex-row wrap">
+                        {% for tag in project.tags.all|slice:'6' %}
+                            <h6>{{tag}}</h6>
+                        {% endfor %}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>  
+
+    {% if projects.has_other_pages %}
+
+    <div class="flex-row">
+        
+        <ul class="flex-row"> 
+
+            {% if projects.has_previous %}
+                    <li class="no-decoration">
+                        <a id="btnNew" class="no-decoration"
+                        data-page="{{projects.previous_page_number}}" href="?page={{projects.previous_page_number}}"> &#10094; &#10094; Prev </a>
+                    </li>
+                {% endif %}
+
+            
+            
+            {% for page in custom_range %}
+
+                {% if page == projects.number %}
+                    <li class="no-decoration">
+                        <a id="btnNew" class="no-decoration red" data-page="{{page}}" href="?page={{page}}">{{page}}</a>
+                    </li>
+                {% else %}
+                    <li class="no-decoration">
+                        <a id="btnNew" data-page='{{page}}' class="no-decoration" href="?page={{page}}">{{page}}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if projects.has_next %}
+                <li class="no-decoration">
+                    <a id="btnNew" class="no-decoration" data-page="{{projects.next_page_number}}" href="?page={{projects.next_page_number}}"> Next &#10095; &#10095;</a>
+                </li>
+            {% endif %}
+        </ul>
+
+    </div>
+    {% endif %}
+        
+</div>
+
+
+{% endblock %}
+
+

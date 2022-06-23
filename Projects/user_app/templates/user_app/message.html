@@ -1,0 +1,26 @@
+
+
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+{% for message in chat reversed %}
+    <div class="flex-col">
+    {% if message.sender == request.user.profile %}
+        <div class="message-box">{{message.sender}}: {{message.body|linebreaksbr}}</div>
+        <div class="date-text-small">{{message.created}}</div>
+    {% else %}
+        <div class="message-box">{{message.sender}}: {{message.body}}</div>
+        <div class="date-text-small">{{message.created}}</div>
+    {% endif %}
+    {% endfor %}
+    <form action="{% url 'create-message' sender_id %}" method="POST" class="flex-col">
+        {% csrf_token %}
+        {{form.body}}
+        <input class="small-btn" id="show-all-btn" type="submit" value="Send">
+    </form>
+</div>
+
+
+{% endblock %}

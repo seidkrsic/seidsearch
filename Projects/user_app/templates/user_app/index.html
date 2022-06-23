@@ -1,0 +1,78 @@
+
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="flex-col centered">
+    <h1 class=" flex-row centered">Developers</h1>
+
+    <form id = 'searchForm' class="flex-row centered" action="{% url 'index_user' %}" method="GET">
+        <!-- {% csrf_token %} -->
+        {{form.name}} 
+        <input class="small-btn" type="submit" value = 'Search'>       
+        <a id="show-all-btn" class="small-btn" href="{% url 'index_user' %}">Show all</a>
+    </form>
+
+    <div class='flex-row centered wrap'>
+        {% for profile in profiles %}
+            <a href="{% url 'profile' profile.id %}">
+                <div id='demo' class="flex-col centered profile-card">
+                    <div class="flex-row centered">
+                        <img class="profile-pic" src="{{profile.imageURL}}" width="20" height="20">
+                    </div>
+                        <h3 class="flex-row centered max-width">{{profile.name}}</h3>
+                        <h5 class="flex-row centered max-width" >{{profile.short_intro}}</h5>
+                        <div class="flex-row centered fixed-height max-width wrap">
+                            {% for skill in profile.skill_set.all|slice:"3" %}
+                                <h6 class="tag">{{skill.name}}</h6>
+                            {% endfor %}
+                        </div>
+                </div>
+            </a>
+        
+        {% endfor %}
+    </div>  
+
+    {% if profiles.has_other_pages %}
+
+<div class="flex-row">
+    
+    <ul class="flex-row"> 
+
+        {% if profiles.has_previous %}
+                <li class="no-decoration">
+                    <a id = 'btn' data-page="{{profiles.previous_page_number}}" class="no-decoration" href="?page={{profiles.previous_page_number}}"> &#10094; &#10094; Prev </a>
+                </li>
+            {% endif %}
+
+        
+        
+        {% for page in custom_range %}
+
+            {% if page == profiles.number %}
+                <li class="no-decoration">
+                    <a id="btn" data-page="{{page}}" class="no-decoration red" href="?page={{page}}">{{page}}</a>
+                </li>
+            {% else %}
+                <li class="no-decoration">
+                    <a id="btn" data-page = "{{page}}" class="no-decoration" href="?page={{page}}">{{page}}</a>
+                </li>
+            {% endif %}
+        {% endfor %}
+
+        {% if profiles.has_next %}
+            <li class="no-decoration">
+                <a id = 'btn' data-page="{{profiles.next_page_number}}" class="no-decoration" href="?page={{profiles.next_page_number}}"> Next &#10095; &#10095;</a>
+            </li>
+        {% endif %}
+    </ul>
+
+</div>
+{% endif %}
+    
+
+</div>
+
+
+
+
+{% endblock %}
