@@ -25,7 +25,7 @@ SECRET_KEY = '+js67hld5*zq#fey74e1*_+748etca9$15g-ie+pmc=s62qoti'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True       
 
-ALLOWED_HOSTS = ["localhost", "192.168.0.121", "127.0.0.1", 'seidsearch.herokuapp.com/']
+ALLOWED_HOSTS = ["localhost", "192.168.0.121", "127.0.0.1", 'seidsearch.herokuapp.com']
 
 # Application definition
 
