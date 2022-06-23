@@ -58,11 +58,12 @@ def create_project(request):
         tags = request.POST['newTags'].replace(',',' ').split()
         form = ProjectForm(request.POST, request.FILES)
         if form.is_valid(): 
-            project = form.save()
+            project = form.save(commit=False)
             for tag in tags: 
                 if tag not in project.tags.all(): 
                     new_tag = Tag.objects.create(name=tag)
                     project.tags.add(new_tag)
+            project.owner = request.user.profile
             project.save()
             return HttpResponseRedirect(reverse('index'))
         else: 

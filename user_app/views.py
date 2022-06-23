@@ -72,7 +72,8 @@ def registerUser(request):
             login(request,user)
             return HttpResponseRedirect(reverse('index_user'))
         else: 
-            messages.error(request,'Passwords do not match or username is taken.')
+            messages.error(request,'Passwords do not match or username is taken or not valid password chosen!.')
+    
     return render(request,'user_app/login.html', {
         'page' : page,
         'form' : form,
@@ -125,7 +126,6 @@ def editAccount(request):
     form = ProfileForm(instance=profile)
     if request.method == 'POST': 
         form = ProfileForm(request.POST,request.FILES,instance=profile)
-        print(request.POST)
         if form.is_valid(): 
             form.save()
             return HttpResponseRedirect(reverse('account')) 
