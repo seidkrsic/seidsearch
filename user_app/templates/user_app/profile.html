@@ -13,27 +13,27 @@
             {% endif %}
         </div>
     </div>
-    <div class="justify-start">
-        <div class="flex-row justify-start bg-dark-blue">
+    <div class="justify-start flex-col max-width">
+        <div class="flex-row justify-start bg-dark-blue max-width">
             <h3 class="white">TOP SKILLS </h3>
         </div>
         
         {% for skill in topSkills %}
-        <div class="bg-light-blue">
+        <div class="bg-light-blue max-width">
             <h4>Skill: {{skill.name}}</h4>
         </div>
             <div class="text-style">Description: {{skill.description}}</div>    
         {% endfor %}
         
-        <div class="flex-row justify-start bg-dark-blue">
+        <div class="flex-row justify-start bg-dark-blue max-width">
             <h3 class="white">OTHER SKILLS</h3>
         </div>
-        <div class="flex-row justify-left wrap">
+        <div class="flex-row justify-left wrap max-width">
             {% for skill in otherSkills %}
                 <h4 class="tag">{{skill.name}}</h4>   
             {% endfor %}
         </div>
-        <div class="flex-col centered">
+        <div class="flex-col centered max-width">
             <h3 class="flex-row centered">{{user1.name}} Projects</h3>
             <div class='flex-row centered wrap'>
                 {% for project in user1.project_set.all %}

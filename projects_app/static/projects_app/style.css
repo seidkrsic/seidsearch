@@ -452,9 +452,11 @@ a {
 
 body { 
     display: flex;
+    flex-direction: column;
     margin-left: 0 !important;
     padding-left: 0 !important;
     box-sizing: border-box !important;
+    max-width: 100%;
 }
 
 .flex-col-body { 
