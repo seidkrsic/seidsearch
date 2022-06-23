@@ -1,2 +1,2 @@
 
-web: gunicorn Projects.wsgi --log-file - 
+web: gunicorn seidsearch.wsgi --log-file - 
