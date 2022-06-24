@@ -24,7 +24,7 @@
             
             <div class="flex-row">
                 <a class="nav-link" href="{% url 'index_user' %}"><div id="demotext">Developers</div></a>                
-                <a class="nav-link" href="{% url 'index' %}"><div id="demotext">All Projects</div></a>
+                <a class="nav-link" href="{% url 'index' %}"><div id="demotext">Projects</div></a>
                 {% if user.is_authenticated %}
                     <a class="nav-link" href="{% url 'account' %}"><div id="demotext">Account</div></a>
                     <a class="nav-link" href="{% url 'inbox' %}"><div id="demotext">Inbox</div></a>

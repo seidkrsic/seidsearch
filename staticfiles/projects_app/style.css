@@ -395,7 +395,7 @@ a {
 .message-box-big { 
     display: flex !important;
     flex-direction: column !important;
-    border: 2px solid rgba(3,57,108,0.25);
+    /* border: 2px solid rgba(3,57,108,0.25); */
     height: auto;
     width: 100%;
     justify-content: start;
@@ -470,4 +470,47 @@ body {
     margin-left: 0 !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
+}
+
+
+
+@media screen and (min-width: 400px)   {
+    
+.profile-card, #demo { 
+    width: 500px !important;
+    height: 550px !important;
+    /* display: flex; */
+}
+
+#window { 
+    height: auto;
+}
+
+.profile-pic { 
+    width: 200px;
+    height: 200px;
+}
+
+h3, h1 { 
+    font-size: xx-large;
+}
+
+h5 { 
+    font-size: x-large;
+}
+
+.tag { 
+    font-size: larger;
+    
+}
+
+
+.fixed-height { 
+    height: 100px;
+}
+
+}
+
+.nav-link { 
+    font-size: 25px;
 }

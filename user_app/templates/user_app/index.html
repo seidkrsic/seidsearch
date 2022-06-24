@@ -12,7 +12,7 @@
         <a id="show-all-btn" class="small-btn" href="{% url 'index_user' %}">Show all</a>
     </form>
 
-    <div class='flex-row centered wrap'>
+    <div class='flex-row centered wrap' id="window">
         {% for profile in profiles %}
             <a href="{% url 'profile' profile.id %}">
                 <div id='demo' class="flex-col centered profile-card">
