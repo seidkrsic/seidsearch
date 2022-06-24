@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'seidSearch',
         'USER': 'seid22', 
         'PASSWORD': 'Seidkrsic22', 
-        'HOST': 'database-1.cebfcw0n973z.us-east-1.rds.amazonaws.com', 
+        'HOST': 'database-1.cnwimz83ir0e.eu-south-1.rds.amazonaws.com', 
         'PORT': '5432', 
     }
 }
