@@ -25,6 +25,7 @@ class CustomUserCreationForm(UserCreationForm):
     class Meta: 
         fields = ['first_name','email','username','password1','password2']
         model = User 
+        required =['first_name', 'username']
         labels = { 
             'first_name' : 'Name',
         }

@@ -8,9 +8,9 @@ from django.db.models.signals import post_save, post_delete
 
 class Profile(models.Model): 
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    name = models.CharField(max_length=100,null=True, blank=True )
+    name = models.CharField(max_length=100, null=True, blank=False)
     username = models.CharField(max_length=100,null=True, blank=True)
-    location = models.CharField(max_length=100,null=True, blank=True)
+    location = models.CharField(max_length=100,null=True, blank=False)
     email = models.EmailField(max_length=500,null=True, blank=True)
     short_intro = models.CharField(max_length=500,null=True,blank=True)
     bio = models.TextField(null=True, blank=True)

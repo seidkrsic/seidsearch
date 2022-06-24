@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Projects.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'seidSearch',
+        'NAME': 'seidsearch',
         'USER': 'seid22', 
         'PASSWORD': 'Seidkrsic22', 
         'HOST': 'database-1.cnwimz83ir0e.eu-south-1.rds.amazonaws.com', 
@@ -167,7 +167,7 @@ AWS_S3_FILE_OVERWRITE = False
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 MEDIA_URL = '/images/'
 
-
+AWS_DEFAULT_ACL = None
 
 
 if os.getcwd() == '/app':
