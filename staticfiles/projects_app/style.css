@@ -489,11 +489,11 @@ body {
 
 
 
-@media screen and (min-width: 400px)   {
+@media screen and (max-width: 400px)   {
     
 .profile-card, #demo { 
-    width: 500px !important;
-    height: 550px !important;
+    width: 500px;
+    height: 550px;
     /* display: flex; */
 }
 
@@ -524,9 +524,10 @@ h5 {
     height: 100px;
 }
 
-}
+
 
 .nav-link { 
     font-size: 25px;
 }
 
+}
