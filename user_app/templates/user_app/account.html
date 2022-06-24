@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="flex-row justify-start max-width">
+<div class="flex-col centered max-width">
     <div class="flex-col justify-start">
         <img id="demo" class="circle border profile-pic-main" src="{{user1.imageURL}}">
         <div id = 'profile-name' class="max-width centered flex-row">
@@ -10,13 +10,13 @@
             <a id="show-all-btn" class="small-btn" href="{% url 'editAccount' %}">Edit</a>
         </div>
     </div>
-    <div class="justify-start max-width">
-        <div class="flex-row justify-start light-blue">
-            <h3 class="white">Skills</h3>
+    <div class="justify-start max-width flex-col padding">
+        <div class="flex-row justify-start light-blue max-width padding">
+            <h3 class="white padding">Skills</h3>
             <a href='{% url "create-skill" %}' id="show-all-btn" class="small-btn"> +Add skill</a>
         </div>
         {% for skill in skills %}
-        <div class="border">
+        <div class="border max-width padding">
             <div class="flex-col justify-start">
                 <h4>Skill: {{skill.name}}</h4>
                 <div class="text-style">Description: {{skill.description}}</div> 
@@ -33,7 +33,7 @@
                 <h3 class="flex-row centered">{{user1.name}} Projects</h3>
                 <a id="show-all-btn" class="small-btn" href="{% url 'create' %}"> + Add project</a>
             </div>
-            <div class='flex-row centered wrap border'>
+            <div class='flex-row centered wrap border max-width'>
                 {% for project in user1.project_set.all %}
                     <a class="all-links" href="{% url 'project' project.pk %}">
                         <div id="demo" class="flex-col centered profile-card-bigger">
