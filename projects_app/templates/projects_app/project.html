@@ -33,7 +33,7 @@
         </div>
 
         
-        <div class="flex-col justify-start">
+        <div class="flex-col justify-start max-width">
             <h2>Feedback ( {{project.vote_ratio}} % POSITIVE) ({{project.vote_total}} votes )</h2>
 
             <h1>Reviews</h1>
@@ -56,11 +56,14 @@
 
             {% for review in project.review_set.all reversed %}
                 {% if review.body %}
-                <div class="flex-row">
-                    <a href="{% url 'profile' review.owner.id  %}">
-                        <img class="border profile-pic" src="{{review.owner.profile_image.url}}">
+                <div class="flex-row max-width justify-start">
+                    <a class="flex-col centered" href="{% url 'profile' review.owner.id  %}">
+                        <div class="flex-col centered max-width">
+                            <img class="border profile-pic centered" src="{{review.owner.imageURL}}">
+                            <h6>{{review.owner.name}}</h6>
+                        </div>
                     </a>
-                    <p>{{review.body|linebreaksbr}}</p>
+                    <p class="flex-row justify-start align-items max-width">{{review.body|linebreaksbr}}</p>
                 </div>
                 {% endif %}
             {% endfor %}

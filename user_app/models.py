@@ -31,7 +31,6 @@ class Profile(models.Model):
     def imageURL(self): 
         try: 
            url = self.profile_image.url[:28]+'.eu-south-1.' + self.profile_image.url[29:]
-           
         except: 
             url = ''
         return url 
